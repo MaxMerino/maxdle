@@ -13,12 +13,21 @@ namespace Maxdle
 
         public static int columna {  get; set; }
 
-        public static List<char> lletresIntent { get; set; }
+        //public static List<char> lletresIntent { get; set; }
 
-        public int ComprovarLletres()
+        public static int ComprovarLletra(int index, char lletra)
         {
+            List<char> paraulaSecretachars = paraulaSecreta.ToCharArray().ToList<char>();
             
-            return 0;
+            if (paraulaSecreta[index].Equals(lletra))
+            {
+                return 1;
+            }
+            if (paraulaSecreta.Contains(lletra))
+            {
+                return 0;
+            }
+            return -1;
         }
     }
 }

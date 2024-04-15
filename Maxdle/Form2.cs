@@ -21,6 +21,7 @@ namespace Maxdle
         List<List<Button>> llistaIntents = new List<List<Button>>();
         public Form2()
         {
+            DadesPartida.paraulaSecreta = "MERDA";
             InitializeComponent();
             button1.Click += new EventHandler(lletresClick);
             button2.Click += new EventHandler(lletresClick);
@@ -141,8 +142,23 @@ namespace Maxdle
                 {
                     lletres.Add(llistaIntents[DadesPartida.intent][i].Text.ToCharArray()[0]);
                 }
-                DadesPartida.lletresIntent = lletres;
-
+                
+                
+                for (int i = 0; i < llistaIntents[DadesPartida.intent].Count(); i++)
+                {
+                    int resultat = DadesPartida.ComprovarLletra(i, lletres[i]);
+                    Color colorComprovacio = Color.Gray;
+                    switch (resultat)
+                    {
+                        case 0: 
+                            colorComprovacio = Color.DarkOrange; 
+                            break;
+                        case 1:
+                            colorComprovacio= Color.Green;
+                            break;
+                    }
+                    llistaIntents[DadesPartida.intent][i].BackColor = colorComprovacio;
+                }
 
                 DadesPartida.intent++;
                 DadesPartida.columna = 0;

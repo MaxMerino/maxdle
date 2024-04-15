@@ -45,7 +45,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 20F);
-            button1.Location = new Point(234, 200);
+            button1.Location = new Point(233, 206);
             button1.Name = "button1";
             button1.Size = new Size(302, 65);
             button1.TabIndex = 1;
